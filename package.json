@@ -1,7 +1,7 @@
 {
   "name": "hubot-packt-free-book",
   "description": "A Hubot script to get the Packt Publishing free book of the day",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "Sean Patrick Hagen <sean.hagen@gmail.com>",
   "license": "MIT",
 
@@ -17,6 +17,8 @@
   },
 
   "dependencies": {
+    "cheerio": "^0.19.0",
+    "cron": "^1.0.9",
   },
 
   "peerDependencies": {
