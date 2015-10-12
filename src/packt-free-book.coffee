@@ -48,6 +48,7 @@ get_free_book = (room, robot) =>
     countdown *= 1000
 
   if not countdown? or countdown < Date.now()
+    robot.messageRoom room, "Give me a moment to check the Packt site!"
     robot.http(free_book_url)
       .get() (err, res, body) =>
         $ = cheerio.load body
@@ -75,3 +76,4 @@ book_reply = (room, robot, title, countdown) ->
 
   robot.messageRoom room, "Packt free book of the day: " + title
   robot.messageRoom room, "There is " + diffHrs + " hours and " + diffMins + " minutes left to claim this book!"
+  robot.messageRoom room, "Head on over to http://packtpub.com/packt/offers/free-learning and get your copy now!"
